@@ -19,6 +19,8 @@ def main():
         st.write(model.input_shape)
         img = img.resize((224, 224))
         img_array = image.img_to_array(img)
+        img_array = np.expand_dims(img_array, axis=-1)
+        img_array = np.repeat(img_array, 3, axis=-1)
         img_array = np.expand_dims(img_array, axis=0)
         img_array /= 255.
         st.write(img_array.shape)
