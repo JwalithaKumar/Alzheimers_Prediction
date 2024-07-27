@@ -20,7 +20,7 @@ def main():
     uploaded_file = st.file_uploader("Upload your Brain MRI ")
     if uploaded_file is not None:
         image = Image.open(uploaded_file)
-        st.image(image, caption='Uploaded Image.', use_column_width=True)   
+        st.image(image,caption='Uploaded Image.',use_column_width=True)
         image_array = preprocess_image(image)
         prediction = model.predict(image_array)
         ind = np.argmax(prediction[0])
