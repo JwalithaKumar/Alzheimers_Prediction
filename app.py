@@ -21,6 +21,7 @@ def main():
         img_array = image.img_to_array(img)
         img_array = np.expand_dims(img_array, axis=0)
         img_array /= 255.
+        st.write(img_array.shape)
         prediction = model.predict(img_array)
         ind = np.argmax(prediction[0])
         st.write("Predicted Class:", classnames[ind])
