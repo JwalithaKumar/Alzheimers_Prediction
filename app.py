@@ -6,7 +6,7 @@ from tensorflow.keras.preprocessing import image
 classnames = ['Mild_Demented','Moderate_Demented','Non_Demented','Very_Mild_Demented']
 
 # Load the model
- model = tf.keras.models.load_model('./Alzheimer.h5')
+model = tf.keras.models.load_model('./Alzheimer.h5')
 
 def preprocess_image(image):
     # Resize image to 224x224
