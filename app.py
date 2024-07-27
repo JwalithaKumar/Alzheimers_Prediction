@@ -16,6 +16,7 @@ def main():
         img = Image.open(uploaded_file)
         st.image(img,caption='Uploaded Image.',use_column_width=True)
         model = tf.keras.models.load_model('./Alzheimer.h5')
+        st.write(model.input_shape)
         img = img.resize((224, 224))
         img_array = image.img_to_array(img)
         img_array = np.expand_dims(img_array, axis=0)
