@@ -6,7 +6,7 @@ from tensorflow.keras.preprocessing import image
 classnames = ['Mild_Demented','Moderate_Demented','Non_Demented','Very_Mild_Demented']
 
 # Load the model
-model = tf.keras.models.load_model('./Alzheimer.h5')
+
 
 # Streamlit app
 def main():
@@ -15,6 +15,7 @@ def main():
     if uploaded_file is not None:
         img = Image.open(uploaded_file)
         st.image(img,caption='Uploaded Image.',use_column_width=True)
+        model = tf.keras.models.load_model('./Alzheimer.h5')
         img = img.resize((224, 224))
         img_array = image.img_to_array(img)
         img_array = np.expand_dims(img_array, axis=0)
