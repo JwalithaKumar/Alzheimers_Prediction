@@ -32,7 +32,7 @@ def main():
     if uploaded_file is not None:
         img = Image.open(uploaded_file)
         st.image(img,caption='Uploaded Image.',use_column_width=True)
-        preprocess_image(img)
+        image_array = preprocess_image(img)
         prediction = model.predict(image_array)
         ind = np.argmax(prediction[0])
         st.write("Predicted Class:", classnames[ind])
