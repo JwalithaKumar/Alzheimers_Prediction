@@ -5,7 +5,7 @@ import numpy as np
 classnames = ['Mild_Demented','Moderate_Demented','Non_Demented','Very_Mild_Demented']
 
 # Load the model
-model = tf.keras.models.load_model('Alzheimers.h5')
+model = tf.keras.models.load_model('./Alzheimer.h5')
 
 # Preprocessing function
 def preprocess_image(image):
