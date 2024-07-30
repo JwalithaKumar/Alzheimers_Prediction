@@ -28,6 +28,7 @@ def preprocess_image(image):
 # Streamlit app
 def main():
     st.title("Alzheimers Prediction")
+    st.write("Created by Jwalitha")
     uploaded_file = st.file_uploader("Upload your Brain MRI ")
     if uploaded_file is not None:
         img = Image.open(uploaded_file)
